@@ -16,7 +16,7 @@ namespace BattleArena.Tests
             attacker.Attack(target);
 
             // Assert
-            Assert.Equal(80, target.Health); // damage 20
+            Assert.Equal(75, target.Health); // damage 25
         }
 
         [Fact]

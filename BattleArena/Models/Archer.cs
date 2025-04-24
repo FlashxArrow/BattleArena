@@ -18,7 +18,7 @@ namespace BattleArena.Models
             Name = name;
 
             // Alege aleatoriu între NormalAttack și HeavyAttack
-            attackStrategy = random.Next(2) == 0 ? new NormalAttack() : new HeavyAttack();  // 0 sau 1 pentru a alege între cele 2 strategii
+            attackStrategy = random.Next(2) == 0 ? new NormalAttack() : new ArrowAttack();  // 0 sau 1 pentru a alege între cele 2 strategii
         }
 
        

@@ -1,4 +1,5 @@
 using BattleArena.Strategy;
+using System;
 
 namespace BattleArena.Models
 {
@@ -9,10 +10,12 @@ namespace BattleArena.Models
 
         private IAttackStrategy attackStrategy;
 
+        private static Random random = new Random();
+
         public Warrior(string name)
         {
             Name = name;
-            attackStrategy = new HeavyAttack();  
+            attackStrategy = random.Next(2) == 0 ? new NormalAttack() : new HeavyAttack();
         }
 
         public void SetAttackStrategy(IAttackStrategy strategy)

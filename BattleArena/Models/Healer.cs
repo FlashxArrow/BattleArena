@@ -1,4 +1,5 @@
 ﻿using BattleArena.Strategy;
+using System;
 
 namespace BattleArena.Models
 {
@@ -6,12 +7,15 @@ namespace BattleArena.Models
     {
         public string Name { get; private set; }
         public int Health { get; set; } = 110;
+
         private IAttackStrategy attackStrategy;
+
+        private static Random random = new Random();
 
         public Healer(string name)
         {
             Name = name;
-            attackStrategy = new NormalAttack();  
+            attackStrategy = random.Next(2) == 0 ? new NormalAttack() : new PoisonAttack();
         }
 
         public void SetAttackStrategy(IAttackStrategy strategy)

@@ -2,11 +2,11 @@
 
 namespace BattleArena.Strategy
 {
-    public class HeavyAttack : IAttackStrategy
+    public class PoisonAttack : IAttackStrategy
     {
         public void Attack(ISoldier target)
         {
-            target.TakeDamage(25);
+            target.TakeDamage(15);
         }
     }
 }
