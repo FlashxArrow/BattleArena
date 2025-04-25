@@ -32,11 +32,13 @@ public interface IAttackStrategy {
     void Attack(Soldier attacker, Soldier target);
 }
 
-public class MeleeAttackStrategy : IAttackStrategy {
-    public void Attack(Soldier attacker, Soldier target) {
-        target.Health -= 10;
-    }
-}
+ public class NormalAttack : IAttackStrategy
+ {
+     public void Attack(ISoldier target)
+     {
+         target.TakeDamage(10);
+     }
+ }
 ```
 
 ### 2. Factory Pattern
